@@ -17,23 +17,22 @@ const duplicates = [
     'soda'
   ];
 
-  const without_duplicate=[];
-  function removeDuplicates(param) {
-    for (let index = 0; index < param.length; index++) {
+
+  function deleteDuplicateElement (array){
+    for (let i = 0; i < array.length; i++) {
+      for (let j = i+1; j < array.length; j++) {
+        if (array[i]===array[j]) {
+          array.splice(j,1);
+          j--;
+        }
         
-        if (without_duplicate.includes(param[index])) {
-    console.log(`Se repite ${param[index]}`);
-    
-  } else {
-    without_duplicate.push(param[index]);
-    
-    
-  }
-  
+      }
+      
     }
+    return array;
+
   
   }
 
-  removeDuplicates(duplicates);
-  console.log(without_duplicate);
-  console.log(duplicates);
+  console.log(deleteDuplicateElement(duplicates));
+ 
